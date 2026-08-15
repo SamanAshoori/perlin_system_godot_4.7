@@ -1,3 +1,27 @@
 [gd_scene format=3 uid="uid://621p5l08mp1t"]
 
-[node name="TileMapLayer" type="TileMapLayer" unique_id=524623414]
+[ext_resource type="Script" uid="uid://dfb64gmeboo83" path="res://scripts/perlin_noise.gd" id="1_wipo8"]
+[ext_resource type="Texture2D" uid="uid://nb1ntnd243mg" path="res://assets/terrain-0004.png" id="2_okeva"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o3fi6"]
+texture = ExtResource("2_okeva")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_okeva"]
+sources/0 = SubResource("TileSetAtlasSource_o3fi6")
+
+[node name="perlin_noise" type="Node2D" unique_id=2143713324]
+script = ExtResource("1_wipo8")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=524623414]
+tile_set = SubResource("TileSet_okeva")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=413638879]
+
+[node name="randomise" type="Button" parent="CanvasLayer" unique_id=1011778782]
+offset_right = 251.0
+offset_bottom = 72.0
+text = "Randomise"

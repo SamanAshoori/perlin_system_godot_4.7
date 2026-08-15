@@ -25,3 +25,5 @@ tile_set = SubResource("TileSet_okeva")
 offset_right = 251.0
 offset_bottom = 72.0
 text = "Randomise"
+
+[connection signal="pressed" from="CanvasLayer/randomise" to="." method="_on_randomise_pressed"]
